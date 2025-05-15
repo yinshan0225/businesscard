@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>business card</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <h1>我的個人名片 | Business Card</h1>
+        <nav>
+            <ul>
+                <li><a href="#info">個人資訊</a></li>
+                <li><a href="#intro">個人簡介</a></li>
+                <li><a href="#portfolio">作品成就</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="content-wrapper">
+            <h4 class="title infoTitle">個人資訊</h4>
+            <section class="info" id="info">
+                <p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#multiCollapseExample1" aria-expanded="false"
+                        aria-controls="multiCollapseExample1">基本資料</button>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#multiCollapseExample2" aria-expanded="false"
+                        aria-controls="multiCollapseExample2">聯絡方式</button>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#multiCollapseExample3" aria-expanded="false"
+                        aria-controls="multiCollapseExample3">過往學歷</button>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#multiCollapseExample4" aria-expanded="false"
+                        aria-controls="multiCollapseExample4">能力摘要</button>
+                </p>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card collapse multi-collapse" id="multiCollapseExample1">
+                            <div class="card-body">
+                                <p class="sectionTitle" style="font-weight: bold;">姓名</p>
+                                <hr class="card-line" />
+                                <p>黃英烜 Ying Huang</p>
+                                <hr class="mainLine" />
+                                <p class="sectionTitle" style="font-weight: bold;">目前職稱</p>
+                                <hr class="card-line" />
+                                <p>數位內容專員</p>
+                                <hr class="mainLine" />
+                                <p class="sectionTitle" style="font-weight: bold;">所在地</p>
+                                <hr class="card-line" />
+                                <p>新北市 NewTaipei</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card collapse multi-collapse" id="multiCollapseExample2">
+                            <div class="card-body">
+                                <p class="sectionTitle" style="font-weight: bold;">Email</p>
+                                <hr class="card-line" />
+                                <p>k4564123@gmail.com</p>
+                                <hr class="mainLine" />
+                                <p class="sectionTitle" style="font-weight: bold;">Phone Number</p>
+                                <hr class="card-line" />
+                                <p>0972-880-367</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card collapse multi-collapse" id="multiCollapseExample3">
+                            <div class="card-body">
+                                <p class="sectionTitle" style="font-weight: bold;">高中</p>
+                                <hr class="card-line" />
+                                <p>臺北市立中崙高中(ZLSH)</p>
+                                <hr class="mainLine" />
+                                <p class="sectionTitle" style="font-weight: bold;">大學</p>
+                                <hr class="card-line" />
+                                <p>東吳大學(Soochow University)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card collapse multi-collapse" id="multiCollapseExample4">
+                            <div class="card-body">
+                                <p class="sectionTitle" style="font-weight: bold;">具備技能</p>
+                                <hr class="card-line" />
+                                <p>基礎HTML、CSS、JavaSCript、Java</p>
+                                <hr class="mainLine" />
+                                <p class="sectionTitle" style="font-weight: bold;">簡介</p>
+                                <hr class="card-line" />
+                                <p>對於網頁相關具有熱忱，目前仍在精進所學。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <h4 class="title">成長歷程</h4>
+            <section class="intro" id="intro">
+                <h5>成長歷程</h5>
+                <p>　　自幼接觸電腦遊戲，對資訊領域產生興趣，並對設計、財務、管理頗有興趣。曾在高中選修Python課程，而後大學主修資訊管理。選修數位內容設計(illustrator、photoshop)、行動技術(Unity)、電商、
+                    敏捷開發(以Scrum為核心，使用Trello、Miro、Figma協作)以及富蘭克林講座等課程。在平時閒暇時間恰好有機會接觸到網頁設計，也激發了我對網頁設計的熱忱。畢業後，在退伍後的空檔赴美旅遊兩個多月，
+                    利用這段時間不僅培養自身的英文能力，也讓我放慢腳步、拓展視野。未來依舊打算專研前端React.js、Vue.js、Json等語言、工具，再學習Node.js、MySQL往全端工程師方向前進。</p>
+                <h5>美國壯遊</h5>
+                <p>　　在大學畢業並完成兵役後，我前往美國寄宿親戚家70天，體驗芝加哥、底特律與南加州的多元文化與生活型態。這是一段難得的學習機會，讓我能夠反思自己、開拓視野。從適應新環境、與不同背景文化的人
+                    交流，到觀察不同城市的社會運作與價值觀差異，讓從小不曾離開台灣的我，體會到探索的意義。我深刻體會到跳脫舒適圈、勇於探索，是個人成長最有效的方式。這段經歷啟發我持續精進自己、勇於探索未知。
+                    儘管我目前資歷尚淺，但我相信通過不斷努力與學習，我能夠成為具有國際視野的專業人才。</p>
+            </section>
+            <h4 class="title">作品成就</h4>
+            <section class="portfolio" id="portfolio">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                            aria-label="Slide 3"></button>
+
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img\模擬官網.png" class="d-block w-100" alt="第一次向朋友學習並一起完成的車商官網">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>初次接觸</h5>
+                                <p>第一次像朋友學習並完成的車商官網</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img\promo's.png" class="d-block w-100" alt="以HTML+CSS作出的官網首頁">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>基礎練習</h5>
+                                <p>以HTML+CSS作出的官網首頁</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img\js清單.png" class="d-block w-100" alt="以基礎js作出的待辦事項清單">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>基礎練習</h5>
+                                <p>以基礎js作出的待辦事項清單</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img\React.js清單.png" class="d-block w-100" alt="以基礎React.js作出的待辦事項清單">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>進階探索</h5>
+                                <p>以基礎React.js作出的待辦事項清單</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <section class="contact">
+            <h5>聯絡方式:</h5>
+            <span>0972-880-367</span><br>
+            <span>k4564123@gmail.com</span>
+        </section>
+        <section class="copyrightNotice">
+            <p>© 2025 Ying Huang</p>
+        </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
