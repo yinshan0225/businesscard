@@ -18,6 +18,7 @@ header {
     border-radius: 35px;
     font-weight: bold;
     position: fixed;
+    z-index: 10;
 }
 
 .content-wrapper {
@@ -34,7 +35,7 @@ h1 {
     position: absolute;
     left: 80px;
     line-height: 80px;
-    font-size: 35px;
+    font-size: px;
     font-family: "Bookman", "URW Bookman L", serif;
 }
 
@@ -148,7 +149,7 @@ section {
 }
 
 footer {
-    height:200px;
+    height: 200px;
     background-color: #e9e9e9;
     box-shadow: 2px -4px 6px -2px rgba(0, 0, 0, 60%);
     border-radius: 20px;
@@ -163,7 +164,7 @@ footer .contact {
     height: 100px;
     /* 固定寬度，方便置中 */
     text-align: left;
-    line-height: 1.6; 
+    line-height: 1.6;
 }
 
 footer .copyrightNotice {
@@ -171,4 +172,16 @@ footer .copyrightNotice {
     width: 300px;
     margin-right: 0;
     text-align: right;
+}
+
+@media screen and (max-width: 800px)
+/*響應式生效於螢幕768px時*/
+    {
+    header ul {
+        display: none;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
 }
