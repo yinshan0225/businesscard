@@ -19,6 +19,7 @@ header {
     font-weight: bold;
     position: fixed;
     z-index: 10;
+    transition: height 1s ease;
 }
 
 .content-wrapper {
@@ -35,8 +36,9 @@ h1 {
     position: absolute;
     left: 80px;
     line-height: 80px;
-    font-size: px;
+    font-size: 30px;
     font-family: "Bookman", "URW Bookman L", serif;
+    transition: left 1s ease, font-size 1s ease;
 }
 
 p {
@@ -174,6 +176,33 @@ footer .copyrightNotice {
     text-align: right;
 }
 
+.background {
+    position: relative;
+    overflow: hidden;
+}
+
+/* 背景大字 */
+.background::before {
+    content: attr(data-bgword);
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%) scale(1);
+    font-size: 15vw;
+    color: rgba(0, 0, 0, 0.05);
+    /* 依你網頁風格調整透明度和顏色 */
+    pointer-events: none;
+    white-space: nowrap;
+    transition: transform 0.2s ease-out;
+    z-index: 0;
+}
+
+/* 區塊內文字保持在最上層 */
+.background>* {
+    position: relative;
+    z-index: 1;
+}
+
 @media screen and (max-width: 800px)
 /*響應式生效於螢幕768px時*/
     {
@@ -183,5 +212,10 @@ footer .copyrightNotice {
 
     h1 {
         font-size: 20px;
+        left:40px;
+        line-height: 60px;
+    }
+    header {
+        height: 60px;
     }
 }
