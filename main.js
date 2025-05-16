@@ -61,39 +61,64 @@ document.querySelectorAll('.card.collapse').forEach(card => {
     });
 });
 
-const h1 = document.querySelectAll('h1');
+const bgTexts = document.querySelectorAll('.bg-text');
+const sections = {
+    info: document.getElementById('info'),
+    intro: document.getElementById('intro'),
+    portfolio: document.getElementById('portfolio'),
+};
 
+function onScroll() {
+    const viewportHeight = window.innerHeight;
+    const centerY = viewportHeight / 2;
 
+    let activeSection = null;
+    let minDistance = Infinity;
 
-window.addEventListener('scroll', () => {
-    const windowCenter = window.innerHeight / 2;
-
-    document.querySelectorAll('.section').forEach(section => {
+    // 找出離視窗中央最近的區塊
+    for (const [key, section] of Object.entries(sections)) {
         const rect = section.getBoundingClientRect();
         const sectionCenter = rect.top + rect.height / 2;
-        const distance = Math.abs(windowCenter - sectionCenter);
+        const distance = Math.abs(centerY - sectionCenter);
 
-        // 計算縮放比例，離中心越近放大，離遠越小，介於1~1.5倍
-        let scale = 1 + (1 - Math.min(distance / windowCenter, 1)) * 0.5;
-
-        section.style.setProperty('--scale', scale);
-
-        // 動態改變 ::before 的 transform scale
-        section.style.setProperty('transform', 'none'); // 確保區塊本身不被影響
-
-        const beforeStyle = `
-        .section[data-bgword="${section.dataset.bgword}"]::before {
-          transform: translate(-50%, -50%) scale(${scale});
+        if (distance < minDistance) {
+            minDistance = distance;
+            activeSection = key;
         }
-      `;
+    }
 
-        // 移除之前可能存在的 style，避免累積
-        let styleTag = document.getElementById('dynamic-style-' + section.dataset.bgword);
-        if (styleTag) styleTag.remove();
+    // 根據距離決定文字縮放和透明度
+    bgTexts.forEach((el) => {
+        if (el.dataset.section === activeSection) {
+            // 越接近中心，scale 越大
+            const rect = sections[activeSection].getBoundingClientRect();
+            const sectionCenter = rect.top + rect.height / 2;
+            const distance = Math.abs(centerY - sectionCenter);
 
-        styleTag = document.createElement('style');
-        styleTag.id = 'dynamic-style-' + section.dataset.bgword;
-        styleTag.innerHTML = beforeStyle;
-        document.head.appendChild(styleTag);
+            // 計算縮放，距離0時scale最大1.5，距離越遠最低1
+            const maxScale = 1.5;
+            const minScale = 1;
+            const maxOpacity = 1;
+            const minOpacity = 0;
+
+            // 最大距離取 viewportHeight / 2 讓縮放有範圍
+            const maxDistance = viewportHeight / 2;
+            let scale = maxScale - ((distance / maxDistance) * (maxScale - minScale));
+            scale = Math.max(minScale, Math.min(maxScale, scale));
+
+            let opacity = maxOpacity - ((distance / maxDistance) * (maxOpacity - minOpacity));
+            opacity = Math.max(minOpacity, Math.min(maxOpacity, opacity));
+
+            el.style.transform = `scale(${scale})`;
+            el.style.opacity = opacity;
+        } else {
+            // 非活動區塊縮小且透明
+            el.style.transform = 'scale(1)';
+            el.style.opacity = 0;
+        }
     });
-});
+}
+
+// 頁面載入與滾動時觸發
+window.addEventListener('scroll', onScroll);
+window.addEventListener('load', onScroll);

@@ -4,6 +4,12 @@
     font-family: "Microsoft JhengHei", "Helvetica", sans-serif;
 }
 
+.selector {
+    writing-mode: vertical-rl;
+    /* 文字直排，從右往左 */
+    /* 也可以用 vertical-lr (從左往右) */
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -43,6 +49,7 @@ h1 {
 
 p {
     line-height: 1.8;
+    font-size: 20px;
 }
 
 header ul {
@@ -103,6 +110,7 @@ section {
     border: none;
     color: rgb(63, 62, 62);
     box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.7);
+    font-size: 20px;
 }
 
 .btn-primary:hover {
@@ -176,32 +184,36 @@ footer .copyrightNotice {
     text-align: right;
 }
 
-.background {
-    position: relative;
-    overflow: hidden;
-}
-
-/* 背景大字 */
-.background::before {
-    content: attr(data-bgword);
-    position: absolute;
+.bg-text-wrapper {
+    position: fixed;
     top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%) scale(1);
-    font-size: 15vw;
-    color: rgba(0, 0, 0, 0.05);
-    /* 依你網頁風格調整透明度和顏色 */
+    left: 4vw;
+    /* 視窗左邊20% */
+    transform: translateY(-50%);
+    z-index: -1;
+    /* 放後面 */
     pointer-events: none;
-    white-space: nowrap;
-    transition: transform 0.2s ease-out;
-    z-index: 0;
+    /* 不影響滑鼠 */
+    user-select: none;
+    /* 不能被選取 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
 }
 
-/* 區塊內文字保持在最上層 */
-.background>* {
-    position: relative;
-    z-index: 1;
+.bg-text {
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.25);
+    transform-origin: center;
+    will-change: transform, opacity;
+    writing-mode: vertical-rl;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(0.1);
+    opacity: 0;
 }
+
 
 @media screen and (max-width: 800px)
 /*響應式生效於螢幕768px時*/
@@ -212,9 +224,10 @@ footer .copyrightNotice {
 
     h1 {
         font-size: 20px;
-        left:40px;
+        left: 40px;
         line-height: 60px;
     }
+
     header {
         height: 60px;
     }

@@ -22,9 +22,13 @@
         </nav>
     </header>
     <main>
+        <div class="bg-text-wrapper" aria-hidden="true">
+            <span class="bg-text" data-section="info">個人資訊</span>
+            <span class="bg-text" data-section="intro">個人簡介</span>
+            <span class="bg-text" data-section="portfolio">作品成就</span>
+        </div>
         <div class="content-wrapper">
             <h4 class="title infoTitle">個人資訊</h4>
-            <div class="background" data-word="個人資訊"></div>
             <section class="info" id="info">
                 <p>
                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
@@ -100,19 +104,18 @@
                 </div>
             </section>
             <h4 class="title">個人簡介</h4>
-            <div class="background" data-word="個人簡介"></div>
             <section class="intro" id="intro">
                 <h5>成長歷程</h5>
                 <p>　　自幼接觸電腦遊戲，對資訊領域產生興趣，並對設計、財務、管理頗有興趣。曾在高中選修Python課程，而後大學主修資訊管理。選修數位內容設計(illustrator、photoshop)、行動技術(Unity)、電商、
                     敏捷開發(以Scrum為核心，使用Trello、Miro、Figma協作)以及富蘭克林講座等課程。在平時閒暇時間恰好有機會接觸到網頁設計，也激發了我對網頁設計的熱忱。畢業後，在退伍後的空檔赴美旅遊兩個多月，
-                    利用這段時間不僅培養自身的英文能力，也讓我放慢腳步、拓展視野。未來依舊打算專研前端React.js、Vue.js、Json等語言、工具，再學習Node.js、MySQL往全端工程師方向前進。</p>
+                    利用這段時間不僅培養自身的英文能力，也讓我放慢腳步、拓展視野。未來依舊打算專研前端React.js、Vue.js、Json等語言、工具，再學習Node.js、MySQL往全端工程師方向前進。
+                </p>
                 <h5>美國壯遊</h5>
                 <p>　　在大學畢業並完成兵役後，我前往美國寄宿親戚家70天，體驗芝加哥、底特律與南加州的多元文化與生活型態。這是一段難得的學習機會，讓我能夠反思自己、開拓視野。從適應新環境、與不同背景文化的人
                     交流，到觀察不同城市的社會運作與價值觀差異，讓從小不曾離開台灣的我，體會到探索的意義。我深刻體會到跳脫舒適圈、勇於探索，是個人成長最有效的方式。這段經歷啟發我持續精進自己、勇於探索未知。
                     儘管我目前資歷尚淺，但我相信通過不斷努力與學習，我能夠成為具有國際視野的專業人才。</p>
             </section>
             <h4 class="title">作品成就</h4>
-            <div class="background" data-word="作品成就"></div>
             <section class="portfolio" id="portfolio">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -138,7 +141,7 @@
                         </div>
                         <div class="carousel-item">
                             <a href="https://yinshan0225.github.io/promos/">
-                            <img src="img\promo's.png" class="d-block w-100" alt="以HTML+CSS作出的官網首頁">
+                                <img src="img\promo's.png" class="d-block w-100" alt="以HTML+CSS作出的官網首頁">
                             </a>
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>基礎練習</h5>
@@ -156,11 +159,12 @@
                         </div>
                         <div class="carousel-item">
                             <a href="https://yinshan0225.github.io/reactTodo/">
-                            <img src="img\React.js清單.png" class="d-block w-100" alt="以基礎React.js作出的待辦事項清單">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>進階探索</h5>
-                                <p>以基礎React.js作出的待辦事項清單</p>
-                            </div>
+                                <img src="img\React.js清單.png" class="d-block w-100" alt="以基礎React.js作出的待辦事項清單">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>進階探索</h5>
+                                    <p>以基礎React.js作出的待辦事項清單</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -173,8 +177,9 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
-                </div>
             </section>
+        </div>
+        </section>
         </div>
     </main>
     <footer>
